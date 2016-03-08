@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="UTF-8">
     <title>Max's Portfolio</title>
+    <link rel="stylesheet" href="vendor/normalize.css/normalize.css">
+    <link rel="stylesheet" href="styles/main.css">
   </head>
   <body>
     <main>
@@ -20,7 +23,17 @@
           <li><a href='https://www.facebook.com/max.friedrichsen' target='_blank'>Facebook</a></li>
         </ul>
       </nav>
-      <section>
+      <section id="projects">
+        <article class="template" data-category="old projects">
+          <header>
+            <h2>Title</h2>
+            <div class="authorInfo">
+                By <address><a href="">Author</a></address>
+                published <time pubdate datetime="2000-01-01">Time Published</time>
+            </div>
+          </header>
+          <section class="project-body"></section>
+        </article>
       </section>
     </main>
     <footer>

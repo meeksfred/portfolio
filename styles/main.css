@@ -1,0 +1,21 @@
+body {
+  padding: 10px;
+}
+
+main {
+  margin: auto;
+  width: 90%;
+}
+
+address {
+  display: inline-block;
+}
+
+hr {
+  margin: 10px;
+  width: 90%;
+}
+
+.template {
+  display: none;
+}
