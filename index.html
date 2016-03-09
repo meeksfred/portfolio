@@ -7,23 +7,36 @@
     <link rel="stylesheet" href="styles/main.css">
   </head>
   <body>
+    <header class="main-header">
+      <h1>
+        Max Friedrichsen's Portfolio
+      </h1>
+      <p>Welcome! Included is a complete list of my programming projects</p>
+    </header>
+    <nav class="head-nav">
+      <ul>
+        <li class="tab" data-content="projects"><a href="#">Home</a></li>
+        <li class="tab" data-content="about"><a href="#">About Me</a></li>
+        <li><a href='https://github.com/meeksfred' target='_blank'>GitHub</a></li>          <li><a href='https://twitter.com/maxamillionfred' target='_blank'>Twitter</a></li>
+        <li><a href='https://www.facebook.com/max.friedrichsen' target='_blank'>Facebook</a></li>
+      </ul>
+    </nav>
     <main>
-      <header>
-        <h1>
-          Max Friedrichsen's Portfolio
-        </h1>
-        <p>Welcome! Included is a complete list of my programming projects</p>
-      </header>
-      <nav>
-        <ul>
-          <li>Projects</li>
-          <li>About Me</li>
-          <li><a href='https://github.com/meeksfred' target='_blank'>GitHub</a></li>
-          <li><a href='https://twitter.com/maxamillionfred' target='_blank'>Twitter</a></li>
-          <li><a href='https://www.facebook.com/max.friedrichsen' target='_blank'>Facebook</a></li>
-        </ul>
-      </nav>
-      <section id="projects">
+      <section id="projects" class="tab-content">
+        <div>
+          <ul id="filters">
+            <li>
+              <select id="author-filter">
+                <option value="">-- Authors --</option>
+              </select>
+            </li>
+            <li>
+              <select id="category-filter">
+                <option value="">-- Categories --</option>
+              </select>
+            </li>
+          </ul>
+        </div>
         <article class="template" data-category="old projects">
           <header>
             <h2>Title</h2>
@@ -35,6 +48,21 @@
           <section class="project-body"></section>
         </article>
       </section>
+      <section id="about" class="tab-content">
+        <h2>
+          Welcome to the Blog!
+        </h2>
+        <section>
+          <p>A born and raised Seattlite coming from the suburb of Shoreline, I'm an aspiring developer currently taking classes through the wonderful company Codefellows.
+          <h3>My Interests:</h3>
+          <ul>
+            <li>Coding</li>
+            <li>Sports (Go Mariners!)</li>
+            <li>Hiking</li>
+            <li>Video Games</li>
+          </ul>
+        </section>
+      </section>
     </main>
     <footer>
       Max Friedrichsen Portfolio
@@ -42,5 +70,6 @@
     <script type='text/javascript' src='scripts/portfolioArticles.js'></script>
     <script src='https://code.jquery.com/jquery-2.2.1.min.js'></script>
     <script type='text/javascript' src='scripts/portfolio.js'></script>
+    <script type='text/javascript' src='scripts/portfolioView.js'></script>
   </body>
 </html>

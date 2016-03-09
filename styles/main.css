@@ -1,10 +1,10 @@
 body {
-  padding: 10px;
+  background-color: #D8CAA8;
+  color: #382513;
 }
 
 main {
-  margin: auto;
-  width: 90%;
+  width: 100%;
 }
 
 address {
@@ -12,10 +12,32 @@ address {
 }
 
 hr {
-  margin: 10px;
+  margin: 1em;
   width: 90%;
+}
+
+a, a:link, a:active {
+  color: #E5644E;
+}
+
+h1 {
+  padding: 0;
 }
 
 .template {
   display: none;
+}
+
+.main-header {
+  background-color: #76A87E;
+}
+
+.head-nav {
+  list-style: none;
+  padding: 0;
+}
+
+.head-nav {
+  list-style-type: none;
+  font-size: 18px;
 }
