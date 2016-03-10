@@ -1,0 +1,34 @@
+* {
+  font-family: 'Muli', sans-serif;
+}
+
+body {
+  background-color: #D8CAA8;
+  color: #382513;
+}
+
+main {
+  width: 100%;
+}
+
+address {
+  display: inline-block;
+}
+
+img {
+  max-width: 100%;
+}
+
+hr {
+  margin: 1em;
+  width: 90%;
+}
+
+a, a:link, a:active {
+  color: #E5644E;
+  text-decoration: none;
+}
+
+h1 {
+  padding: 0;
+}

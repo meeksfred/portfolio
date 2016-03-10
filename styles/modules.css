@@ -1,0 +1,27 @@
+.main-header {
+  background-color: #D8CAA8;
+  text-align: center;
+  min-width: 435px;
+}
+
+@media only screen and (max-width: 575px) {
+  .head-nav:hover li  {
+    display: block;
+    padding-top: .3em;
+  }
+}
+
+@media only screen and (min-width: 575px) {
+  .icon-menu {
+    display: none;
+  }
+  .head-nav ul {
+    list-style-type: none;
+    text-align: center;
+  }
+  .head-nav li {
+    display: inline;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}

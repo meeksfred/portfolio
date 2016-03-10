@@ -10,21 +10,13 @@ function Project (opts) {
 }
 
 Project.prototype.toHtml = function() {
-  var $newProject = $('article.template').clone();
+  var source = $('#project-template').html();
+  var template = Handlebars.compile(source);
 
-  $newProject.attr('data-category', this.category);
-  $newProject.attr('data-author', this.author);
-  $newProject.find('.authorInfo a').html(this.author);
-  $newProject.find('.authorInfo a').attr('href', this.authorUrl);
-  $newProject.find('h2').html(this.title);
-  $newProject.find('.project-body').html(this.body);
-  $newProject.find('time[pubdate]').attr('datetime', this.publishedOn);
-  $newProject.find('time[pubdate]').attr('title', this.publishedOn);
-  $newProject.find('time').html('about ' + parseInt((new Date() - new Date(this.publishedOn))/60/60/24/1000) + ' days ago');
-  $newProject.append('<hr>');
-  $newProject.removeClass('template');
+  this.daysAgo = parseInt((new Date() - new Date(this.publishedOn))/60/60/24/1000);
+  this.publishStatus = this.publishedOn ? 'published ' + this.daysAgo + ' days ago' : '(draft)';
 
-  return $newProject;
+  return template(this);
 };
 
 theData.sort(function(a,b) {

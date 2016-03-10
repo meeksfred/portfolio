@@ -1,0 +1,32 @@
+.template {
+  display: none;
+}
+
+.head-nav {
+  list-style: none;
+  position: relative;
+  padding: 0;
+  font-size: 1.3em;
+}
+
+.head-nav ul {
+  list-style-type: none;
+}
+
+.head-nav li {
+  display: none;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.icon-menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: 575px;
+  font-size: 1.5em;
+}
+
+#filters {
+  list-style-type: none;
+}

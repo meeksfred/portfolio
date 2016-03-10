@@ -2,17 +2,34 @@
 <html>
   <head>
     <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
     <title>Max's Portfolio</title>
+    <link href='https://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="vendor/normalize.css/normalize.css">
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/modules.css">
     <link rel="stylesheet" href="styles/icons.css">
+
+    <script id="project-template" type="text/x-handlebars-template">
+      <article class="clearfix" data-category="{{category}}" data-author="{{author}}">
+        <header>
+          <h2>{{title}}</h2>
+          <div class="authorInfo">
+              By <address><a href="{{authorUrl}}">{{author}}</a></address>
+              {{publishStatus}} <time pubdate datetime="2000-01-01">on {{publishedOn}}</time>
+          </div>
+        </header>
+        <section class="project-body">{{{body}}}</section>
+      </article>
+    </script>
   </head>
   <body>
     <header class="main-header">
       <h1>
         Max Friedrichsen's Portfolio
       </h1>
-      <p>Welcome! Included is a complete list of my programming projects</p>
+      <p>Welcome!</p>
     </header>
     <nav class="head-nav">
       <div class="icon-menu"></div>
@@ -40,16 +57,6 @@
             </li>
           </ul>
         </div>
-        <article class="template" data-category="old projects">
-          <header>
-            <h2>Title</h2>
-            <div class="authorInfo">
-                By <address><a href="">Author</a></address>
-                published <time pubdate datetime="2000-01-01">Time Published</time>
-            </div>
-          </header>
-          <section class="project-body"></section>
-        </article>
       </section>
       <section id="about" class="tab-content">
         <h2>
@@ -72,6 +79,7 @@
     </footer>
     <script type='text/javascript' src='scripts/portfolioArticles.js'></script>
     <script src='https://code.jquery.com/jquery-2.2.1.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js'></script>
     <script type='text/javascript' src='scripts/portfolio.js'></script>
     <script type='text/javascript' src='scripts/portfolioView.js'></script>
   </body>
