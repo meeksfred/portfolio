@@ -11,6 +11,10 @@ address {
   display: inline-block;
 }
 
+img {
+  max-width: 100%;
+}
+
 hr {
   margin: 1em;
   width: 90%;
@@ -18,6 +22,7 @@ hr {
 
 a, a:link, a:active {
   color: #E5644E;
+  text-decoration: none;
 }
 
 h1 {
@@ -29,15 +34,51 @@ h1 {
 }
 
 .main-header {
-  background-color: #76A87E;
+  background-color: #D8CAA8;
+  text-align: center;
+  min-width: 435px;
 }
 
 .head-nav {
   list-style: none;
   padding: 0;
+  font-size: 22px;
 }
 
-.head-nav {
+.head-nav ul {
   list-style-type: none;
-  font-size: 18px;
+}
+
+.head-nav li {
+  display: none;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.head-nav:hover li {
+  display: block;
+}
+
+.icon-menu {
+  float: right;
+  max-width: 575px;
+}
+
+@media only screen and (min-width: 575px) {
+  .icon-menu {
+    display: none;
+  }
+  .head-nav ul {
+    list-style-type: none;
+    text-align: center;
+  }
+  .head-nav li {
+    display: inline;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+
+#filters {
+  list-style-type: none;
 }
