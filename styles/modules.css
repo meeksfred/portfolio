@@ -4,12 +4,13 @@
   min-width: 435px;
 }
 
-@media only screen and (max-width: 575px) {
+@media only screen and (max-width: 576px) {
   .head-nav:hover li  {
     display: block;
     padding-top: .3em;
   }
 }
+/*Marcus mentioned that I shouldn't have different media queries set to the same pixel value*/
 
 @media only screen and (min-width: 575px) {
   .icon-menu {
