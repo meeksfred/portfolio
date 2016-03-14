@@ -1,5 +1,3 @@
-var projects = [];
-
 function Project (opts) {
   this.author = opts.author;
   this.title = opts.title;
@@ -8,6 +6,8 @@ function Project (opts) {
   this.publishedOn = opts.publishedOn;
   this.body = opts.body;
 }
+
+Project.all = [];
 
 Project.prototype.toHtml = function() {
   var source = $('#project-template').html();
@@ -19,14 +19,30 @@ Project.prototype.toHtml = function() {
   return template(this);
 };
 
-theData.sort(function(a,b) {
-  return (new Date(b.publishedOn)) - (new Date(a.publishedOn));
-});
+Project.loadAll = function(myData) {
+  myData.sort(function(a,b) {
+    return (new Date(b.publishedOn)) - (new Date(a.publishedOn));
+  });
 
-theData.forEach(function(ex) {
-  projects.push(new Project(ex));
-});
+  myData.forEach(function(ex) {
+    Project.all.push(new Project(ex));
+  });
+};
 
-projects.forEach(function(z){
-  $('#projects').append(z.toHtml());
-});
+Project.grabAll = function() {
+  if(localStorage.myData) {
+    Project.loadAll(JSON.parse(localStorage.myData));
+    projectView.initIndexPage();
+  } else {
+    $.getJSON('/data/portfolioArticles.json', function(myData) {
+      Project.loadAll(myData);
+
+      var toCache = JSON.stringify(myData);
+      localStorage.myData = toCache;
+    }).error(function(err) {
+      console.log(err);
+    });
+
+    projectView.initIndexPage();
+  }
+};
