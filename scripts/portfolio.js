@@ -1,48 +1,50 @@
-function Project (opts) {
-  this.author = opts.author;
-  this.title = opts.title;
-  this.category = opts.category;
-  this.authorUrl = opts.authorUrl;
-  this.publishedOn = opts.publishedOn;
-  this.body = opts.body;
-}
+(function(module) {
 
-Project.all = [];
+  function Project (opts) {
+    this.author = opts.author;
+    this.title = opts.title;
+    this.category = opts.category;
+    this.authorUrl = opts.authorUrl;
+    this.publishedOn = opts.publishedOn;
+    this.body = opts.body;
+  }
 
-Project.prototype.toHtml = function() {
-  var source = $('#project-template').html();
-  var template = Handlebars.compile(source);
+  Project.all = [];
 
-  this.daysAgo = parseInt((new Date() - new Date(this.publishedOn))/60/60/24/1000);
-  this.publishStatus = this.publishedOn ? 'published ' + this.daysAgo + ' days ago' : '(draft)';
+  Project.prototype.toHtml = function() {
+    var source = $('#project-template').html();
+    var template = Handlebars.compile(source);
 
-  return template(this);
-};
+    this.daysAgo = parseInt((new Date() - new Date(this.publishedOn))/60/60/24/1000);
+    this.publishStatus = this.publishedOn ? 'published ' + this.daysAgo + ' days ago' : '(draft)';
 
-Project.loadAll = function(myData) {
-  myData.sort(function(a,b) {
-    return (new Date(b.publishedOn)) - (new Date(a.publishedOn));
-  });
+    return template(this);
+  };
 
-  myData.forEach(function(ex) {
-    Project.all.push(new Project(ex));
-  });
-};
-
-Project.grabAll = function() {
-  if(localStorage.myData) {
-    Project.loadAll(JSON.parse(localStorage.myData));
-    projectView.initIndexPage();
-  } else {
-    $.getJSON('/data/portfolioArticles.json', function(myData) {
-      Project.loadAll(myData);
-
-      var toCache = JSON.stringify(myData);
-      localStorage.myData = toCache;
-    }).error(function(err) {
-      console.log(err);
+  Project.loadAll = function(myData) {
+    myData.sort(function(a,b) {
+      return (new Date(b.publishedOn)) - (new Date(a.publishedOn));
     });
 
-    projectView.initIndexPage();
-  }
-};
+    Project.all = myData.map(function(ele) {
+      return new Project(ele);
+    });
+  };
+
+  Project.grabAll = function(callback) {
+    if(localStorage.myData) {
+      Project.loadAll(JSON.parse(localStorage.myData));
+      callback();
+    } else {
+      $.getJSON('/data/portfolioArticles.json', function(myData) {
+        Project.loadAll(myData);
+
+        var toCache = JSON.stringify(myData);
+        localStorage.myData = toCache;
+      });
+      callback();
+    }
+  };
+
+  module.Project = Project;
+})(window);
