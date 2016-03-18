@@ -7,6 +7,7 @@
     this.authorUrl = opts.authorUrl;
     this.publishedOn = opts.publishedOn;
     this.body = opts.body;
+    this.picture = opts.picture;
   }
 
   Project.all = [];
@@ -41,8 +42,9 @@
 
         var toCache = JSON.stringify(myData);
         localStorage.myData = toCache;
+        callback();
       });
-      callback();
+
     }
   };
 

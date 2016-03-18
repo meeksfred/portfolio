@@ -3,14 +3,13 @@
 }
 
 body {
-  background-color: #D8CAA8;
+  background-color: #B3C3E3;
   color: #382513;
-  margin-left: 1em;
-  margin-right: 1em;
 }
 
 main {
   width: 100%;
+  background: #FFF6E3;
 }
 
 address {
@@ -19,10 +18,11 @@ address {
 
 img {
   max-width: 100%;
+  max-height: auto;
 }
 
 hr {
-  margin: 1em;
+  margin-top: 0;
   width: 90%;
 }
 
@@ -33,4 +33,13 @@ a, a:link, a:active {
 
 h1 {
   padding: 0;
+}
+
+section {
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+footer {
+  background-color: #B3C3E3;
 }

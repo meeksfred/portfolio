@@ -7,6 +7,8 @@
   position: relative;
   padding: 0;
   font-size: 1.3em;
+  background-color: #B3C3E3;
+  margin: 0;
 }
 
 .head-nav ul {
@@ -21,7 +23,7 @@
 
 .icon-menu {
   position: absolute;
-  top: 0;
+  top: -1em;
   left: 0;
   max-width: 575px;
   font-size: 1.5em;
@@ -29,4 +31,17 @@
 
 #filters {
   list-style-type: none;
+}
+
+#filters select {
+  background: #FFF6E3;
+  font-weight: bold;
+}
+
+body .head-nav {
+  margin: 0;
+}
+
+footer {
+  text-align: center;
 }
