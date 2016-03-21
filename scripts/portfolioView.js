@@ -2,16 +2,6 @@
 
   var projectView = {};
 
-  projectView.mainNav = function() {
-    $('.head-nav').on('click', 'li', function () {
-      $('.tab-content').hide();
-      // $('#' + $(this).data('content')).show();
-      $('#' + $(this).data('content')).fadeIn(); //I recommended that Max use a .fadeIn() method, to make the change between single tabs seem smoother.
-    });
-
-    $('.head-nav .tab:first').click();
-  };
-
   projectView.populateFilters = function() {
     $('article').each(function() {
       if (!$(this).hasClass('template')) {
@@ -31,17 +21,18 @@
         $('article[data-category="' + $(this).val() + '"]').fadeIn();
       } else {
         $('article').fadeIn();
-        // $('project.template').hide();
       }
     });
   };
 
   projectView.initIndexPage = function() {
-    Project.all.forEach(function(z){
-      $('#projects').append(z.toHtml());
-    });
+    if ($('#projects article').length === 0 ) {
+      Project.all.forEach(function(z){
+        $('#projects').append(z.toHtml());
+      });
+    }
 
-    projectView.mainNav();
+
     projectView.populateFilters();
     projectView.categoryFilter();
   };

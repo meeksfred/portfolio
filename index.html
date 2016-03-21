@@ -16,7 +16,7 @@
         <header>
           <h2>{{title}}</h2>
           <div class="authorInfo">
-              By <address><a href="{{authorUrl}}">{{author}}</a></address>
+              By <address><a href="{{authorUrl}}" target="_blank">{{author}}</a></address>
               {{publishStatus}} <time pubdate datetime="2000-01-01">on {{publishedOn}}</time>
           </div>
         </header>
@@ -37,8 +37,8 @@
     <nav class="head-nav">
       <div class="icon-menu"></div>
       <ul>
-        <li class="tab icon-home nav1" data-content="projects"><a href="#">Home</a></li>
-        <li class="tab icon-profile nav2" data-content="about"><a href="#">About</a></li>
+        <li class="tab icon-home nav1" data-content="projects"><a href="/">Home</a></li>
+        <li class="tab icon-profile nav2" data-content="about"><a href="/about">About</a></li>
         <li class="icon-github nav3"><a href='https://github.com/meeksfred' target='_blank'>GitHub</a></li>
         <li class="icon-twitter nav4"><a href='https://twitter.com/maxamillionfred' target='_blank'>Twitter</a></li>
         <li class="icon-facebook2 nav5"><a href='https://www.facebook.com/max.friedrichsen' target='_blank'>Facebook</a></li>
@@ -78,8 +78,11 @@
     </footer>
     <script src='https://code.jquery.com/jquery-2.2.1.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js'></script>
-    <script type='text/javascript' src='scripts/portfolio.js'></script>
-    <script type='text/javascript' src='scripts/portfolioView.js'></script>
-    <script> Project.grabAll(projectView.initIndexPage); </script>
+    <script type='text/javascript' src='/scripts/portfolio.js'></script>
+    <script type='text/javascript' src='/scripts/portfolioView.js'></script>
+    <script src='/vendor/page.js'></script>
+    <script src='/scripts/projectsController.js'></script>
+    <script src='/scripts/aboutController.js'></script>
+    <script src='/scripts/routes.js'></script>
   </body>
 </html>
