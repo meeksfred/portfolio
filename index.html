@@ -29,7 +29,7 @@
     <script id="repo-template" type="text/x-handlebars-template">
       <li>
         <a href="{{html_url}}" target="_blank"><h3>{{name}}</h3></a>
-        <p>There are {{watchers}} people watching this repo. :( </p>
+        <p>Language: {{language}}</p>
       </li>
     </script>
   </head>
@@ -85,9 +85,8 @@
     <footer>
       Max Friedrichsen Portfolio
     </footer>
-    <script src='https://code.jquery.com/jquery-2.2.1.min.js'></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js'></script>
-    <script src='scripts/githubToken.js'></script>
+    <script src='/vendor/jquery-2.1.4.js'></script>
+    <script src='/vendor/handlebars.js'></script>
     <script type='text/javascript' src='/scripts/portfolio.js'></script>
     <script type='text/javascript' src='/scripts/portfolioView.js'></script>
     <script src='/vendor/page.js'></script>

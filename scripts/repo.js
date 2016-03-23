@@ -4,15 +4,11 @@
   myRepos.all = [];
 
   myRepos.fetchRepos = function(callback) {
-    $.ajax({
-      url: 'https://api.github.com/users/meeksfred/repos?per_page=5&sort=updated',
-      type: 'GET',
-      headers: { 'Authorization': 'token ' + githubToken },
-      success: function(data, message, xhr) {
+    $.get('github/users/meeksfred/repos?per_page=20&sort=updated')
+      .done(function(data, message, xhr) {
         myRepos.all = data;
-        callback();
-      }
-    });
+      })
+      .done(callback);
   };
 
     // Now I need to filter for the correct data

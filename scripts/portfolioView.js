@@ -26,12 +26,10 @@
   };
 
   projectView.initIndexPage = function() {
-    // if ($('#projects article').length === 0 ) {
     $('#projects').empty();
     Project.all.forEach(function(z){
       $('#projects').append(z.toHtml());
     });
-    // }
 
 
     projectView.populateFilters();
