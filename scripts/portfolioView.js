@@ -2,15 +2,6 @@
 
   var projectView = {};
 
-  var renderHtml = function(project) {
-    var template = Handlebars.compile($('#project-template').text());
-
-    this.daysAgo = parseInt((new Date() - new Date(this.publishedOn))/60/60/24/1000);
-    this.publishStatus = this.publishedOn ? 'published ' + this.daysAgo + ' days ago' : '(draft)';
-
-    return template(project);
-  };
-
   projectView.populateFilters = function() {
     $('article').each(function() {
       if (!$(this).hasClass('template')) {
