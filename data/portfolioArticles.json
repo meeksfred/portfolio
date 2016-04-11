@@ -34,5 +34,14 @@
     "publishedOn": "2015-11-12",
     "body": "<p>A simple guessing game about myself. Wrong answers will be met with frowny faces and red lines through their answers, while correct answers will be met with smiley faces and green lines through their answers.</p>",
     "picture": "pictures/guessinggame.png"
+  },
+  {
+    "title": "Code 301 Final Project",
+    "category": "Hiking App",
+    "author": "Max Friedrichsen, Zach Simonson, Jeff Eng, Susan Harrison",
+    "authorUrl": "https://findahike.herokuapp.com/",
+    "publishedOn": "2016-4-1",
+    "body": "<p>A general resource/reference map for finding specific trailheads and hikes throughout Washington State. You initially set a marker and define a search radius to find all the hikes within a certain area, and from there can narrow your search using secondary filters such as length of hike, rating, and elevation gain.",
+    "picture": "pictures/findahike.png"
   }
 ]
