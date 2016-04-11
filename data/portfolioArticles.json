@@ -1,6 +1,6 @@
 [
   {
-    "title": "Code 201 Final Project",
+    "title": "U-Pik: Code 201 Final Project",
     "category": "To-Do App Seattle",
     "author": "Max Friedrichsen, Regan ONeill, Gareth Couch",
     "authorUrl": "https://github.com/meeksfred/final-project",
@@ -36,7 +36,7 @@
     "picture": "pictures/guessinggame.png"
   },
   {
-    "title": "Code 301 Final Project",
+    "title": "Find-A-Hike: Code 301 Final Project",
     "category": "Hiking App",
     "author": "Max Friedrichsen, Zach Simonson, Jeff Eng, Susan Harrison",
     "authorUrl": "https://findahike.herokuapp.com/",

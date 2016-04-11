@@ -1,8 +1,11 @@
 .main-header {
-  background-color: #B3C3E3;
+  background: url("/pictures/banner.jpg");
+  background-size: 100% 100%;
   text-align: center;
+  height: 250px;
   min-width: 435px;
 }
+
 
 @media only screen and (max-width: 646px) {
   .head-nav:hover li  {

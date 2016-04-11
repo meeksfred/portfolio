@@ -3,13 +3,13 @@
 }
 
 body {
-  background-color: #B3C3E3;
-  color: #382513;
+  background-color: white;
+  color: black;
 }
 
 main {
   width: 100%;
-  background: #FFF6E3;
+  background: white;
 }
 
 address {
@@ -27,7 +27,7 @@ hr {
 }
 
 a, a:link, a:active {
-  color: #E5644E;
+  color: #961A10;
   text-decoration: none;
 }
 
@@ -41,5 +41,5 @@ section {
 }
 
 footer {
-  background-color: #B3C3E3;
+  background-color: black;
 }
