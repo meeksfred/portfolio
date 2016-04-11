@@ -12,7 +12,7 @@
 
   Project.all = [];
 
-  Project.renderHtml = function() {
+  Project.prototype.renderHtml = function() {
     var template = Handlebars.compile($('#project-template').text());
 
     this.daysAgo = parseInt((new Date() - new Date(this.publishedOn))/60/60/24/1000);

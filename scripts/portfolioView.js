@@ -28,7 +28,7 @@
   projectView.initIndexPage = function() {
     $('#projects').empty();
     Project.all.forEach(function(z){
-      $('#projects').append(renderHtml(z));
+      $('#projects').append(z.renderHtml());
     });
 
 
