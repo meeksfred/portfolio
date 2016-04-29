@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <title>Max's Portfolio</title>
-    <link href='https://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="vendor/normalize.css/normalize.css">
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/layout.css">
@@ -14,15 +13,12 @@
     <script id="project-template" type="text/x-handlebars-template">
       <article class="clearfix" data-category="{{category}}" data-author="{{author}}">
         <header>
-          <h2>{{title}}</h2>
+          <h2><a href="{{authorUrl}}" target="_blank">{{title}}</a></h2>
           <div class="authorInfo">
-              By <address><a href="{{authorUrl}}" target="_blank">{{author}}</a></address>
+              By <address>{{author}}</address>
               {{publishStatus}} <time pubdate datetime="2000-01-01">on {{publishedOn}}</time>
           </div>
         </header>
-        <div class="project-image">
-          <img src='{{picture}}' height=200px width=300px>
-        </div>
         <section class="project-body">{{{body}}}</section>
       </article>
     </script>
@@ -50,15 +46,6 @@
     </nav>
     <main>
       <section id="projects" class="tab-content">
-        <div>
-          <ul id="filters">
-            <li>
-              <select id="category-filter">
-                <option value="">--Sort By Project--</option>
-              </select>
-            </li>
-          </ul>
-        </div>
       </section>
       <section id="about" class="tab-content">
         <h2>
@@ -85,8 +72,8 @@
     </footer>
     <script src='/vendor/jquery-2.1.4.js'></script>
     <script src='/vendor/handlebars.js'></script>
-    <script type='text/javascript' src='/scripts/portfolio.js'></script>
-    <script type='text/javascript' src='/scripts/portfolioView.js'></script>
+    <script src='/scripts/portfolio.js'></script>
+    <script src='/scripts/portfolioView.js'></script>
     <script src='/vendor/page.js'></script>
     <script src='/scripts/projectsController.js'></script>
     <script src='/scripts/aboutController.js'></script>

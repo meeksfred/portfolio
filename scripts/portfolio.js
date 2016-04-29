@@ -8,6 +8,7 @@
     this.publishedOn = opts.publishedOn;
     this.body = opts.body;
     this.picture = opts.picture;
+    this.count = opts.count;
   }
 
   Project.all = [];
@@ -23,7 +24,7 @@
 
   Project.loadAll = function(myData) {
     myData.sort(function(a,b) {
-      return (new Date(b.publishedOn)) - (new Date(a.publishedOn));
+      return (b.count) > (a.count);
     });
 
     Project.all = myData.map(function(ele) {
@@ -32,20 +33,20 @@
   };
 
   Project.grabAll = function(callback) {
-    if(localStorage.myData) {
-      Project.loadAll(JSON.parse(localStorage.myData));
+    // if(localStorage.myData) {
+    //   Project.loadAll(JSON.parse(localStorage.myData));
+    //   callback();
+    // } else {
+    $.getJSON('/data/portfolioArticles.json', function(myData) {
+      Project.loadAll(myData);
+
+      var toCache = JSON.stringify(myData);
+      localStorage.myData = toCache;
       callback();
-    } else {
-      $.getJSON('/data/portfolioArticles.json', function(myData) {
-        Project.loadAll(myData);
+    });
 
-        var toCache = JSON.stringify(myData);
-        localStorage.myData = toCache;
-        callback();
-      });
-
-    }
   };
+  // };
 
   module.Project = Project;
 })(window);
